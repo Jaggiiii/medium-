@@ -5,12 +5,17 @@ import { decode, jwt, sign, verify } from 'hono/jwt'
 import { userRouter } from '../routes/user';
 import { blogRouter } from '../routes/blog';
 import { cors } from 'hono/cors';
+// trying to do some changes
+
+
 
 const app = new Hono<{
   Bindings: {
     DATABASE_URL: string
     JWT_SECRET: string
   }
+
+  // hii there
 }>();
 app.use('/*',cors());
 app.route("/api/v1/user", userRouter);
